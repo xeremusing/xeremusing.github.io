@@ -2,7 +2,7 @@ async function getData(selectedMajor) {
 		var response = await fetch('cit5students.json');
 		if(response.ok) {
 			var data = await response.json();
-			stuMajor = data.filter( (item) => student.major == selectedMajor );
+			stuMajor = data.filter( (student) => student.major == selectedMajor );
 			var templateText = document.getElementById('classTemplate').innerHTML;
 			var compiledTemplateText = Handlebars.compile(templateText);
 			compiledHtml = compiledTemplateText({ rows: stuMajor })
