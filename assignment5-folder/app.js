@@ -1,6 +1,6 @@
 async function getData(selectedMajor) {
 		var response = await fetch('cit5students.json');
-		if(response.ok {
+		if(response.ok) {
 			var data = await response.json();
 			stuMajor = data.filter( (item) => student.major == selectedMajor );
 			var templateText = document.getElementById('classTemplate').innerHTML;
