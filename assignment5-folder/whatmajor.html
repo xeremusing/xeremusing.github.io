@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>What Major?</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<style> button{margin: 5px} </style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Select a Major</h1>
+			
+			<div style='padding: 5px;'>
+				<button type='button' onClick="getData('CIT')">CIT Majors</button>
+				<button type='button' onClick="getData('BUS')">Business Majors</button>
+			</div>
+			<h3>We filter our dataset by major</h3>
+			<div id="classTable"></div>
+		</div>
+		<script type="text/x-handlebars-template" id="classTemplate">
+			<table class="table table-striped">
+				<tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
+				{{#each rows}}
+					<tr>
+						<td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
+					</tr>
+			</table>
+		</script>
+		<script src="app.js"></script>
+	</body>
+
+</html>
