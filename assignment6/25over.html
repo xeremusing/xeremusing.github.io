@@ -61,7 +61,9 @@
                         this.tickets = await response.json()
                         //tickets = data.filter( (item) => item.major == majSelect );     
                     },
-                    
+                    filterTickets() {
+                        this.tickets = this.tickets.filter(ticket => (ticket.actual_speed - ticket.posted_speed) > 25)
+                    },
                  }
                })
            
